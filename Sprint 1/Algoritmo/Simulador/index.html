@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,500&display=swap" rel="stylesheet" />
+  <link href="css/JOHNSON.css" rel="stylesheet" />
+  <!-- <link href="css/main.css" rel="stylesheet" /> -->
+
+  <meta charset="utf-8" />
+
+  <title>Simulador</title>
+</head>
+
+<body>
+  <main class="container">
+    <h1 class="h1">Faça aqui uma simulação</h1>
+
+    <label for="">Quantidade de postes com mau funcionamento: <span id="resultado_qtd_poste"></span></label>
+    <br /><br />
+    <span class="text"></span>
+    <input class="input" id="qtdPoste" oninput="calculateGrossLoss(), addQtdPoste(this.value)" type="range" />
+    <span></span>
+
+    <br /><br />
+
+    <label for="">Quantidade de dias que esse poste está com mau funcionamento: <span
+        id="resultado_qtd_dia"></span></label>
+    <br /><br />
+    <span class="text"></span>
+    <input class="input" id="qtdDias" oninput="calculateGrossLoss(), addQtdDia(this.value)" type="range" />
+    <span></span>
+
+    <br />
+
+    <h2 id="desperdicioValores"></h2>
+    <h3></h3>
+
+    <ul id="resultados" class="list-reset"></ul>
+  </main>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>

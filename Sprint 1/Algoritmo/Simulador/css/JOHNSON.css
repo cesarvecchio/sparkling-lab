@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:200,300,400&display=swap');
+
+* {
+  font-family: 'Roboto', sans-serif;
+  color: #000000;
+  background-color: white;
+}
+
+h1 {
+  font-family: 'Montserrat';
+  font-weight: 200;
+}
+
+.input {
+  width: 100%;
+  height: 10px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 1px 1px 1px #000000;
+  background: #3071a9;
+  border-radius: 5px;
+  border: 1px solid #000000;
+}
+
+.container {
+  margin: 0 auto; /*vai aplicar em cima e baixo, esquerda e direita.*/
+  max-width: 720px; /* largura máxima. */
+  text-align: center;
+  font-family: 'Montserrat';
+}
+
+.list-reset {
+  list-style: none; /* Tirar as bolinhas da lista */
+}
