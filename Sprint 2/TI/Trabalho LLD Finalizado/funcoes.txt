@@ -1,0 +1,89 @@
+function visualizar_opcao_2() 
+{
+    alert('hm vc e gay 2')
+    div_container_respostas = 'block';
+    div_container_arduino2.style.display = 'block';
+}
+
+function visualizar_opcao_3() 
+{
+    alert('hm vc e gay 3')
+    div_container_respostas = 'block';
+    div_container_arduino3.style.display = 'block';
+}
+
+function visualizar_opcao_4() 
+{
+    alert('hm vc e gay 4')
+    div_container_respostas = 'block';
+    div_container_arduino4.style.display = 'block';
+}
+function visualizar_opcao_5() 
+{
+    div_container_respostas = 'block';
+    div_container_arduino5.style.display = 'block';
+}
+
+function visualizar_opcao_6() 
+{
+    div_container_respostas = 'block';
+    div_container_arduino6.style.display = 'block';
+}
+function visualizar_opcao_7() 
+{
+    div_container_respostas = 'block';
+    div_container_arduino7.style.display = 'block';
+}
+function visualizar_opcao_8() 
+{
+    div_container_respostas = 'block';
+    div_container_arduino8.style.display = 'block';
+}
+function visualizar_opcao_9() 
+{
+    div_container_respostas = 'block';
+    div_container_arduino9.style.display = 'block';
+}
+
+
+
+/////////////////////////////////////////////////////////////////
+
+.div_respostas_class {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.div_respostas_class .div_respostas_classtext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.div_respostas_class .div_respostas_classtext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.div_respostas_class:hover .div_respostas_classtext {
+  visibility: visible;
+  opacity: 1;
+}

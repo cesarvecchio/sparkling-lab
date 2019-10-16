@@ -1,0 +1,219 @@
+.pagina_alinhamento{
+  text-align: center;
+
+}
+/* Parte dos botões */
+.botao_lld {
+    background-color: #3498db;
+    border-radius: 200px; /*Deixar a borda arredondada*/
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /*Dar sombra*/
+    color: #fff; /* Cor branca */
+    cursor: pointer;
+    display: inline-block;
+    filter: brightness(1); /*Deixar botão mais escuro ou claro*/
+    font-size: 0.5 rem;
+    font-weight: 700;
+    padding: 1em 2em;
+    text-transform: uppercase; /*Deixar letra maiúscula*/
+    transition: all 0.2s; /*fazer animação*/
+    margin-left: 0px;
+  }
+  /* Deixa o botão com efeito ao passar o mouse encima*/
+  .botao_lld:hover{
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+    filter: brightness(1.2);
+  }
+  .botao_hld {
+    background-color: #3498db;
+    border-radius: 200px; /*Deixar a borda arredondada*/
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /*Dar sombra*/
+    color: #fff; /* Cor branca */
+    cursor: pointer;
+    display: inline-block;
+    filter: brightness(1); /*Deixar botão mais escuro ou claro*/
+    font-size: 0.5 rem;
+    font-weight: 700;
+    padding: 1em 2em;
+    text-transform: uppercase; /*Deixar letra maiúscula*/
+    transition: all 0.2s; /*fazer animação*/
+  }
+  /* Deixa o botão com efeito ao passar o mouse encima*/
+  .botao_hld:hover{
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+    filter: brightness(1.2);
+  }
+
+  /* Parte dos quadrados */
+  .quadrado_lld{
+      height: 350px;
+      width: 550px;
+      border: solid #3498db;
+      font-size: 25px;
+      text-transform: uppercase;
+      margin-left: 5px;
+      border-radius: 10px;
+      margin-top: 10px;
+  }
+  .quadrado_lld2{
+    height: 350px;
+    width: 550px;
+    border: solid #3498db;
+    font-size: 25px;
+    text-transform: uppercase;
+    margin-left: 750px;
+    margin-top: -356px;
+    border-radius: 10px;
+}
+.quadrado_lld3{
+  height: 350px;
+  width: 550px;
+  border: solid #3498db;
+  font-size: 25px;
+  text-transform: uppercase; 
+  margin-top: 170px;
+  margin-left: 375px;
+  border-radius: 10px;
+}
+.arduino_foto_class{
+  border-radius: 15px;
+  margin-left: 25px;
+  margin-bottom: -250px;
+}
+.poste_foto_class{
+  margin-left: 185px;
+  margin-top: 90px;
+ }
+ .notebook_foto_class{
+  margin-top: -15px;
+  margin-left: 15px;
+ }
+ .roteador_foto_class{
+  margin-top: -150px;
+  margin-left: 250px;
+ }
+ .satelite_foto_class{
+  margin-top: -165px;
+  margin-left: 475px;
+}
+ .seta_esquerda_foto_class{
+  margin-left: 500px;
+}
+.nuvem_foto_class{
+  margin-top: -475px;
+  margin-left: 575px;
+ }
+.seta_direita_foto_class{
+  margin-top: -78px;
+  margin-left: 700px;
+}
+.satelite2_foto_class{
+  margin-top: -47px;
+  margin-left: 775px;
+}
+.sql_foto_class{
+margin-top:12px;
+margin-left:50px;
+}
+.azure_foto_class{
+  margin-top:-125px;
+  margin-left:350px;
+}
+.servidor_foto_class{
+  margin-top:45px;
+  margin-left:185px;
+}
+.notebook_usuario_foto_class{
+  margin-top:15px;
+  margin-left:50px;
+  }
+.roteador_usuario_foto_class{
+  margin-top:35px;
+  margin-left:60px;
+}
+.celular_foto_class{
+  margin-top:-320px;
+  margin-left:350px;
+}
+.seta_usuario_foto_class{
+  margin-top: 20px;
+  margin-left:250px;
+}
+
+/*Resposta das imagens*/
+.container_resposta{
+  background-color: rgba(0, 0, 0, 0.1);
+  height: 350px;
+  width: 150px;
+  color: #3498db;
+  border: solid #3498db;
+  font-size: 18px;
+  border-radius: 20px;
+  margin-top: -485px;
+  margin-left: 580px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+
+/*Parte do quadrado da HLD*/
+.quadrado_hld{
+  height: 700px;
+  width: 1170px;
+  border: solid #3498db;
+  font-size: 25px;
+  text-transform: uppercase;
+  margin-left: 80px;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.quadrado_hld_poste
+{
+  width: 320px;
+  height: 310px;
+  margin-left: 0px;
+}
+
+.quadrado_hld1_sensor
+{
+  margin-left: 380px;
+  margin-top: -250px;
+  width: 126px;
+  height: 112px;
+}
+
+.quadrado_hld2_bancodados
+{
+  width: 427px;
+  height: 200px;
+  margin-left: 600px;
+  margin-top: -170px;
+}
+
+.quadrado_hld3_site
+{
+  margin-top: 100px;
+  margin-left: 530px;
+  width: 500px;
+  height: 350px;
+}
+
+.quadrado_hld4_grafico
+{
+  margin-left: 60px;
+  margin-top: -241px;
+  width: 440px;
+  height: 260px;
+}
+
+.quadrado_hld_resposta_class
+{
+  background-color: rgba(0, 0, 0, 0.1);
+  width: 500px;
+  height: 210px;
+  color: #3498db;
+  border: solid #3498db;
+  border-radius: 10px;
+  margin-left: 200px;
+  margin-top: -460px;
+}

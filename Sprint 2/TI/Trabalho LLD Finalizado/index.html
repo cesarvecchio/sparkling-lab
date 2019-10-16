@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="main.css">
+    <script src="script.js"></script>
+    <title>Documentação LLD</title>
+</head>
+<body>
+    <!-- Div para deixar os botões "LLD e HLD" e alinha-los para o centro. -->
+    <div class="pagina_alinhamento">
+        <button onclick="visualizar_opcao_lld()" class="botao_lld" id="botao_lld_geral">LLD</button>
+        <button onclick="visualizar_opcao_hld()" class="botao_hld" id="botao_hld_geral">HLD</button>
+    </div>
+        
+    <!-- Div mestra para encaixar todos os quadrados -->
+    <div id="quadrados_lld" style="display: none">
+
+       <!-- Cada div menor vai encaixando seus ícones -->
+        <div class="quadrado_lld" id="div_quadrado_lld">
+            <div class="arduino_foto_class"><img onmouseover="visualizar_opcao_1()" onmouseout="sair_opcao()" src="img/arduino.png" alt="" width="170px" height="170px"></div>
+            <div class="poste_foto_class"><img onmouseover="visualizar_opcao_2()" onmouseout="sair_opcao()" src="img/poste.png" alt="" width="170px" height="170px"></div>
+            <div class="notebook_foto_class"><img onmouseover="visualizar_opcao_3()" onmouseout="sair_opcao()"src="img/notebook.png" alt="" width="140px" height="140px"></div>
+            <div class="roteador_foto_class"><img onmouseover="visualizar_opcao_4()" onmouseout="sair_opcao()"src="img/roteador.png" alt="" width="170px" height="170px"></div>
+        </div>
+
+        <!--Div do quadrado 2, o quadrado do usuário-->
+        <div class="quadrado_lld2" id="div_quadrado_lld2">
+            <div class="notebook_usuario_foto_class"><img onmouseover="visualizar_opcao_5()" onmouseout="sair_opcao()" src="img/notebook_usuario.png" alt="" width="180px" height="180px"></div>
+            <div class="roteador_usuario_foto_class"><img onmouseover="visualizar_opcao_6()" onmouseout="sair_opcao()" src="img/roteador_usuario.png" alt="" width="100px" height="100px"></div>
+            <div class="celular_foto_class"><img onmouseover="visualizar_opcao_7()" onmouseout="sair_opcao()" src="img/celular.png" alt="" width="50px" height="90px"></div>
+            <div class="seta_usuario_foto_class"><img src="img/seta_usuario.png" alt=""width="120px" height="120px"></div>
+        </div>
+
+        <!--Div do banco de dados-->
+        <div class="quadrado_lld3" id="div_quadrado_lld3">
+            <div class="sql_foto_class"><img onmouseover="visualizar_opcao_8()" onmouseout="sair_opcao()"src="img/sql.png" alt="" width="120px" height="120px"></div>
+            <div class="azure_foto_class"><img onmouseover="visualizar_opcao_9()" onmouseout="sair_opcao()" src="img/azure.png" alt="" width="120px" height="120px"></div>
+            <div class="servidor_foto_class"><img onmouseover="visualizar_opcao_10()" onmouseout="sair_opcao()"src="img/servidor_aplicacao.png" alt=""width="120px" height="120px"></div>
+        </div>
+
+        <!--Div da nuvem, satelites e as setas para direita e esquerda-->
+        <div class="nuvem_foto_class"><img onmouseover="visualizar_opcao_11()" onmouseout="sair_opcao()" src="img/cloud.png" alt="" width="120px" height="110PX"></div>
+        <div class="satelite_foto_class"><img onmouseover="visualizar_opcao_12()" onmouseout="sair_opcao()" src="img/satelite.png" alt="" width="45px" height="45PX"></div>
+        <div class="satelite2_foto_class"><img onmouseover="visualizar_opcao_13()" onmouseout="sair_opcao()" src="img/satelite2.png" alt="" width="45px" height="45PX"></div>
+        <div class="seta_esquerda_foto_class"><img onmouseover="visualizar_opcao_14()" onmouseout="sair_opcao()"src="img/seta_esquerda.png" alt="" width="75px" height="75PX"></div>
+        <div class="seta_direita_foto_class"><img onmouseover="visualizar_opcao_15()" onmouseout="sair_opcao()"src="img/seta_direita.png" alt="" width="75px" height="75PX"></div>
+    </div>
+
+    <!--Parte responsável pelas respostas ao por o mouse encima da foto-->
+    
+    <div class="container_resposta" id="div_container_resposta" style="display: none">
+    </div>
+
+    <!--Div dos quadrados do HLD-->
+    <div id="quadrados_hld" style="display: none" class="quadrado_hld">
+        <div class="quadrado_hld_poste"><img src="img/poste_hld.png" alt="" onmouseover="visualizar_opcao_16()" onmouseout="sair_opcao_2()"></div>
+        <div class="quadrado_hld1_sensor"><img src="img/sensor_hld.png" alt="" onmouseover="visualizar_opcao_17()" onmouseout="sair_opcao_2()"></div>
+        <div class="quadrado_hld2_bancodados"><img src="img/bancodados_hld.png" alt="" onmouseover="visualizar_opcao_18()" onmouseout="sair_opcao_2()"></div>
+        <div class="quadrado_hld3_site"><img src="img/site_hld.png" alt="" onmouseover="visualizar_opcao_19()" onmouseout="sair_opcao_2()"></div>
+        <div class="quadrado_hld4_grafico"><img src="img/grafico_hld.png" alt="" width="450px" height="350px" onmouseover="visualizar_opcao_20()" onmouseout="sair_opcao_2()"></div>
+        <div id="quadrado_hld_resposta" class="quadrado_hld_resposta_class" style="display: none"> </div>
+    </div>
+
+    
+</body>
+</html> 
