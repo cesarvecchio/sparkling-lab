@@ -1,64 +1,63 @@
 
-go
-
 create table sindico(
 	id_sindico int primary key identity(1,1),
-	nome_sindico varchar(45),
-	sobrenome_sindico varchar(50),
-	cpf_sindico char(11) not null unique,
-	email_sindico varchar(60) not null unique,
-	senha_sindico varchar(45) not null unique
+	nome varchar(45),
+	sobrenome varchar(50),
+	cpf char(11) not null,
+	email varchar(60) not null,
+	senha varchar(45) not null
 );
 go
 
-create table status_sensor_luz(
-	id_status_sensor_luz int primary key identity(1,1),
-	descricao_status_sensor_luz varchar(45) not null unique,
+create table status_sensor_luminosidade(
+	id_status_sensor_luminosidade int primary key identity(1,1),
+	descricao varchar(45) not null,
 );
 go
 
-create table status_sensor_proximidade(
-	id_status_sensor_proximidade int primary key identity(1,1),
-	descricao_status_sensor_proximidade varchar(45) not null unique,
+create table status_sensor_presenca(
+	id_status_sensor_presenca int primary key identity(1,1),
+	descricao varchar(45) not null,
 );
 go
 
 create table condominio(
 	id_condominio int primary key identity(1,1),
-	nome_condominio varchar(45) not null,
+	nome varchar(45) not null,
+	imagem text,
 	fk_sindico int foreign key references sindico(id_sindico)
 );
 go
 
-create table sensor_luz(
-	id_sensor_luz int primary key identity(1,1),
-	local_sensor_luz varchar(45) not null,
+create table sensor_luminosidade(
+	id_sensor_luminosidade int primary key identity(1,1),
+	local varchar(45) not null,
 	fk_condominio int foreign key references condominio(id_condominio),
-	fk_status_sensor_luz int foreign key references status_sensor_luz(id_status_sensor_luz)
+	fk_status_sensor_luminosidade int foreign key references status_sensor_luminosidade(id_status_sensor_luminosidade)
 );
 go
 
-create table sensor_proximidade(
-	id_sensor_proximidade int primary key identity(1,1),
-	local_sensor_proximidade varchar(45) not null,
+create table sensor_presenca(
+	id_sensor_presenca int primary key identity(1,1),
+	local varchar(45) not null,
 	fk_condominio int foreign key references condominio(id_condominio),
-	fk_status_sensor_proximidade int foreign key references status_sensor_proximidade(id_status_sensor_proximidade)
+	fk_status_sensor_presenca int foreign key references status_sensor_presenca(id_status_sensor_presenca)
 );
 go
 
-create table grafico_sensor_luz(
-	id_grafico_sensor_luz int primary key identity(1,1),
-	data_sensor_luz date,
-	hora_sensor_luz time,
+create table grafico_sensor_luminosidade(
+	id_grafico_sensor_luminosidade int primary key identity(1,1),
+	data date,
+	hora time,
 	lumens decimal,
-	fk_sensor_luz int foreign key references sensor_luz(id_sensor_luz)
+	fk_sensor_luminosidade int foreign key references sensor_luminosidade(id_sensor_luminosidade)
 );
 go
 
-create table grafico_sensor_proximidade(
-	id_grafico_sensor_proximidade int primary key identity(1,1),
-	data_sensor_proximidade date,
-	hora_sensor_proximidade time,
-	fk_sensor_proximidade int foreign key references sensor_proximidade(id_sensor_proximidade)
+create table grafico_sensor_presenca(
+	id_grafico_sensor_presenca int primary key identity(1,1),
+	data date,
+	hora time,
+	fk_sensor_presenca int foreign key references sensor_presenca(id_sensor_presenca)
 );
 go
