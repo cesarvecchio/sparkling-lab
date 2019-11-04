@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="author" content="WB Datadict">
+  <meta name="description" content="mydb Data Dictionary.">
+  <title>mydb Data Dictionary</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script>
+    // Highlight table corresponding to the current fragment in the URL.
+    $(document).ready(function(){
+      $("a").click(function() {
+        var elem = $(this);
+        // Remove all classes from tables.
+        $("table").removeClass( "focused" )
+        // Get a.href value and extract its fragment id.
+        var id = elem.attr("href");
+        // Highlight table using fragment id.
+        $(id).addClass( "focused" );
+      });
+    });
+  </script>
+  <style type="text/css">
+    a {
+        text-decoration: none;
+    }
+    abbr {
+        cursor: help;
+    }
+    header {
+        color: #6A6A6A;
+        text-align: right;
+    }
+    table {
+        border-collapse: collapse;
+        margin-bottom: 30px;
+        width: 100%;
+    }
+    table caption {
+        font-size: 120%;
+        font-weight: bold;
+    }
+    table, td, th {
+        border-color: silver;
+        border-style: solid;
+        border-width: 1px;
+    }
+    caption {
+        color: black;
+    }
+    td, th {
+        padding: 1em;
+    }
+    tr:hover {
+        color: #333;
+        background-color: #F2F2F2;
+    }
+    th {
+        background-color: #F5F5F5;
+    }
+    td {
+        color: #6A6A6A;
+    }
+    ul {
+        font-style: italic;
+    }
+    .centered {
+        text-align: center;
+    }
+    .field {
+        color: #4C4C4C;
+        font-weight: bold;
+    }
+    .focused {
+        outline-color: aqua;
+        outline-style: solid;
+        outline-width: thin;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>mydb<br> Data Dictionary</h1>
+    <p>
+      <em>2019-11-04</em>
+    </p>
+    <p>
+      <em></em>
+    </p>
+  </header>
+
+  <nav><h2>Index</h2><ul><li><a href='#condominio'>condominio</a></li><li><a href='#grafico_sensor_luminosidade'>grafico_sensor_luminosidade</a></li><li><a href='#grafico_sensor_presenca'>grafico_sensor_presenca</a></li><li><a href='#sensor_luminosidade'>sensor_luminosidade</a></li><li><a href='#sensor_presenca'>sensor_presenca</a></li><li><a href='#sindico'>sindico</a></li><li><a href='#status_sensor_luminosidade'>status_sensor_luminosidade</a></li><li><a href='#status_sensor_presenca'>status_sensor_presenca</a></li></ul></nav>
+
+  <div><table id='condominio'><caption>condominio</caption><tr><td colspan='12'></td></tr><tr><th>Column name</th><th>DataType</th><th><abbr title='Primary Key'>PK</abbr></th><th><abbr title='Foreign Key'>FK</abbr></th><th><abbr title='Not Null'>NN</abbr></th><th><abbr title='Unique'>UQ</abbr></th><th><abbr title='Binary'>BIN</abbr></th><th><abbr title='Unsigned'>UN</abbr></th><th><abbr title='Zero Fill'>ZF</abbr></th><th><abbr title='Auto Increment'>AI</abbr></th><th>Default</th><th>Comment</th></tr><tr><td class='field'>id_condominio</td><td>INT</td><td class='centered'>&#10004;</td><td class='centered'>&nbsp;</td><td class='centered'>&#10004;</td><td class='centered'>&#10004;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&#10004;</td><td></td><td>Numero identificador do condominio registrado no sistema.</td></tr><tr><td class='field'>nome</td><td>VARCHAR(45)</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td></td><td>Nome do condominio, sem abreviações.</td></tr><tr><td class='field'>imagem</td><td>TEXT</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td></td><td>Campo que salvara o caminho da imagem.</td></tr><tr><td class='field'>sindico_id_sindico</td><td>INT</td><td class='centered'>&nbsp;</td><td class='centered'><a href='#sindico_sindico'>&#10004;</a></td><td class='centered'>&#10004;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td></td><td>Chave estrangeira para identificar qual sindico administra o condominio.</td></tr></table><table id='grafico_sensor_luminosidade'><caption>grafico_sensor_luminosidade</caption><tr><td colspan='12'></td></tr><tr><th>Column name</th><th>DataType</th><th><abbr title='Primary Key'>PK</abbr></th><th><abbr title='Foreign Key'>FK</abbr></th><th><abbr title='Not Null'>NN</abbr></th><th><abbr title='Unique'>UQ</abbr></th><th><abbr title='Binary'>BIN</abbr></th><th><abbr title='Unsigned'>UN</abbr></th><th><abbr title='Zero Fill'>ZF</abbr></th><th><abbr title='Auto Increment'>AI</abbr></th><th>Default</th><th>Comment</th></tr><tr><td class='field'>id_grafico_sensor_luz</td><td>INT</td><td class='centered'>&#10004;</td><td class='centered'>&nbsp;</td><td class='centered'>&#10004;</td><td class='centered'>&#10004;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&#10004;</td><td></td><td>Numero identificador do registro do grafico de luminosidade.</td></tr><tr><td class='field'>data</td><td>DATE</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&#10004;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td></td><td>Data do registro do nivel de luminosidade, para que seja realizado o grafico.</td></tr><tr><td class='field'>hora</td><td>TIME</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&#10004;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td></td><td>Hora do registro do nivel de luminosidade, para que seja realizado o grafico.</td></tr><tr><td class='field'>lumens</td><td>DECIMAL</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&#10004;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td></td><td>Unidade de medida de luminosidade capturada pelo sensor.</td></tr><tr><td class='field'>fk_sensor_luminosidade</td><td>INT</td><td class='centered'>&nbsp;</td><td class='centered'><a href='#fk_sensor_luminosidade'>&#10004;</a></td><td class='centered'>&#10004;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td></td><td>Chave estrangeira, que identifica de qual sensor que o grafico pertence.</td></tr></table><table id='grafico_sensor_presenca'><caption>grafico_sensor_presenca</caption><tr><td colspan='12'></td></tr><tr><th>Column name</th><th>DataType</th><th><abbr title='Primary Key'>PK</abbr></th><th><abbr title='Foreign Key'>FK</abbr></th><th><abbr title='Not Null'>NN</abbr></th><th><abbr title='Unique'>UQ</abbr></th><th><abbr title='Binary'>BIN</abbr></th><th><abbr title='Unsigned'>UN</abbr></th><th><abbr title='Zero Fill'>ZF</abbr></th><th><abbr title='Auto Increment'>AI</abbr></th><th>Default</th><th>Comment</th></tr><tr><td class='field'>id_grafico_sensor_proximidade</td><td>INT</td><td class='centered'>&#10004;</td><td class='centered'>&nbsp;</td><td class='centered'>&#10004;</td><td class='centered'>&#10004;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&#10004;</td><td></td><td>Numero identificador do registro do grafico de presença.</td></tr><tr><td class='field'>data</td><td>DATE</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&#10004;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td></td><td>Data do registro que o sensor capta uma presença, para que seja realizado o grafico.</td></tr><tr><td class='field'>hora</td><td>TIME</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&#10004;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td></td><td>Hora do registro que o sensor capta uma presença, para que seja realizado o grafico.</td></tr><tr><td class='field'>fk_sensor_presenca</td><td>INT</td><td class='centered'>&nbsp;</td><td class='centered'><a href='#fk_sensor_presenca'>&#10004;</a></td><td class='centered'>&#10004;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td></td><td>Chave estrangeira, que identifica de qual sensor que o grafico pertence.</td></tr></table><table id='sensor_luminosidade'><caption>sensor_luminosidade</caption><tr><td colspan='12'></td></tr><tr><th>Column name</th><th>DataType</th><th><abbr title='Primary Key'>PK</abbr></th><th><abbr title='Foreign Key'>FK</abbr></th><th><abbr title='Not Null'>NN</abbr></th><th><abbr title='Unique'>UQ</abbr></th><th><abbr title='Binary'>BIN</abbr></th><th><abbr title='Unsigned'>UN</abbr></th><th><abbr title='Zero Fill'>ZF</abbr></th><th><abbr title='Auto Increment'>AI</abbr></th><th>Default</th><th>Comment</th></tr><tr><td class='field'>id_sensor_luminosidade</td><td>INT</td><td class='centered'>&#10004;</td><td class='centered'>&nbsp;</td><td class='centered'>&#10004;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&#10004;</td><td></td><td>Numero identificador do sensor de luminosidade.</td></tr><tr><td class='field'>local</td><td>VARCHAR(45)</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&#10004;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td></td><td>Local onde o sensor se localiza no condominio.</td></tr><tr><td class='field'>fk_condominio</td><td>INT</td><td class='centered'>&nbsp;</td><td class='centered'><a href='#fk_condominio'>&#10004;</a></td><td class='centered'>&#10004;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td></td><td>Chave estrangeira que identifica de qual condominio este sensor pertence.</td></tr><tr><td class='field'>fk_status_sensor_luminosidade</td><td>INT</td><td class='centered'>&nbsp;</td><td class='centered'><a href='#fk_status_sensor_luminosidade'>&#10004;</a></td><td class='centered'>&#10004;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td></td><td>Chave estrangeira que identifica qual o status atual do sensor.</td></tr></table><table id='sensor_presenca'><caption>sensor_presenca</caption><tr><td colspan='12'></td></tr><tr><th>Column name</th><th>DataType</th><th><abbr title='Primary Key'>PK</abbr></th><th><abbr title='Foreign Key'>FK</abbr></th><th><abbr title='Not Null'>NN</abbr></th><th><abbr title='Unique'>UQ</abbr></th><th><abbr title='Binary'>BIN</abbr></th><th><abbr title='Unsigned'>UN</abbr></th><th><abbr title='Zero Fill'>ZF</abbr></th><th><abbr title='Auto Increment'>AI</abbr></th><th>Default</th><th>Comment</th></tr><tr><td class='field'>id_sensor_presenca</td><td>INT</td><td class='centered'>&#10004;</td><td class='centered'>&nbsp;</td><td class='centered'>&#10004;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&#10004;</td><td></td><td>Numero identificador do sensor de presença.</td></tr><tr><td class='field'>local</td><td>VARCHAR(45)</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&#10004;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td></td><td>Local onde se localiza o sensor de presença no condominio.</td></tr><tr><td class='field'>fk_condominio</td><td>INT</td><td class='centered'>&nbsp;</td><td class='centered'><a href='#fk_condominio'>&#10004;</a></td><td class='centered'>&#10004;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td></td><td>Chave estrangeira que identifica de qual condominio este sensor pertence.</td></tr><tr><td class='field'>fk_status_sensor_presenca</td><td>INT</td><td class='centered'>&nbsp;</td><td class='centered'><a href='#fk_status_sensor_presenca'>&#10004;</a></td><td class='centered'>&#10004;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td></td><td>Chave estrangeira que identifica qual o status atual do sensor.</td></tr></table><table id='sindico'><caption>sindico</caption><tr><td colspan='12'></td></tr><tr><th>Column name</th><th>DataType</th><th><abbr title='Primary Key'>PK</abbr></th><th><abbr title='Foreign Key'>FK</abbr></th><th><abbr title='Not Null'>NN</abbr></th><th><abbr title='Unique'>UQ</abbr></th><th><abbr title='Binary'>BIN</abbr></th><th><abbr title='Unsigned'>UN</abbr></th><th><abbr title='Zero Fill'>ZF</abbr></th><th><abbr title='Auto Increment'>AI</abbr></th><th>Default</th><th>Comment</th></tr><tr><td class='field'>id_sindico</td><td>INT</td><td class='centered'>&#10004;</td><td class='centered'>&nbsp;</td><td class='centered'>&#10004;</td><td class='centered'>&#10004;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&#10004;</td><td></td><td>O identificador do sindico deverá armazenar
+o seu registro de matrículo – número 
+atribuído quando é cadastrado no sistema é utilizado para identificar cada
+ ocorrência.</td></tr><tr><td class='field'>nome</td><td>VARCHAR(45)</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&#10004;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td></td><td>Nome do sindico</td></tr><tr><td class='field'>sobrenome</td><td>VARCHAR(50)</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&#10004;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td></td><td>Sobrenome do sindico, sem abreviações.</td></tr><tr><td class='field'>cpf</td><td>CHAR(11)</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&#10004;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td></td><td>Cadastro de pessoa fisica (cpf) do sindico, sem traços e pontos.</td></tr><tr><td class='field'>emai</td><td>VARCHAR(60)</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&#10004;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td></td><td>Email de acesso ao sistema do sindico.</td></tr><tr><td class='field'>senha</td><td>VARCHAR(45)</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&#10004;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td></td><td>Senha de acesso ao sistema do sindico.</td></tr></table><table id='status_sensor_luminosidade'><caption>status_sensor_luminosidade</caption><tr><td colspan='12'></td></tr><tr><th>Column name</th><th>DataType</th><th><abbr title='Primary Key'>PK</abbr></th><th><abbr title='Foreign Key'>FK</abbr></th><th><abbr title='Not Null'>NN</abbr></th><th><abbr title='Unique'>UQ</abbr></th><th><abbr title='Binary'>BIN</abbr></th><th><abbr title='Unsigned'>UN</abbr></th><th><abbr title='Zero Fill'>ZF</abbr></th><th><abbr title='Auto Increment'>AI</abbr></th><th>Default</th><th>Comment</th></tr><tr><td class='field'>id_status_sensor_luminosidade</td><td>INT</td><td class='centered'>&#10004;</td><td class='centered'>&nbsp;</td><td class='centered'>&#10004;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&#10004;</td><td></td><td>Identificador dos status do sensor de luminosidade.</td></tr><tr><td class='field'>descricao</td><td>VARCHAR(45)</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&#10004;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td></td><td>Descrição dos status do sensor de luminosidade. Ex: Ativo, Inativo, Com defeito.</td></tr></table><table id='status_sensor_presenca'><caption>status_sensor_presenca</caption><tr><td colspan='12'></td></tr><tr><th>Column name</th><th>DataType</th><th><abbr title='Primary Key'>PK</abbr></th><th><abbr title='Foreign Key'>FK</abbr></th><th><abbr title='Not Null'>NN</abbr></th><th><abbr title='Unique'>UQ</abbr></th><th><abbr title='Binary'>BIN</abbr></th><th><abbr title='Unsigned'>UN</abbr></th><th><abbr title='Zero Fill'>ZF</abbr></th><th><abbr title='Auto Increment'>AI</abbr></th><th>Default</th><th>Comment</th></tr><tr><td class='field'>id_status_sensor_presenca</td><td>INT</td><td class='centered'>&#10004;</td><td class='centered'>&nbsp;</td><td class='centered'>&#10004;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&#10004;</td><td></td><td>Numero identificador dos status do sensor de proximidade.</td></tr><tr><td class='field'>descricao</td><td>VARCHAR(45)</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&#10004;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td></td><td>Descrição dos status do sensor de proximidade. Ex: Possui uma presença, Não possui presença.</td></tr></table></div>
+</body>
+</html>
