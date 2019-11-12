@@ -1,0 +1,34 @@
+.about-section {
+  padding: 6.4rem 0;
+  text-align: center;
+}
+
+.about-section_heading {
+  margin-bottom: 1.6rem;
+}
+
+.about-section_description {
+  width: 75%;
+  margin: 0 auto;
+}
+
+.about-section_member-organizer {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 3.2rem;
+}
+
+.about-section_member {
+  width: 30%;
+}
+
+.about-section_member > img {
+  width: 128px;
+  background: #fff;
+  border-radius: 100%;
+  border: 2px solid #8395a7;
+}
+
+.about-section_member > h5 {
+  font-weight: 700;
+}

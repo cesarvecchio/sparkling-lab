@@ -1,0 +1,28 @@
+#areaSelectionElRef {
+    justify-content: space-around;
+}
+
+#areaSelectionElRef,
+#lampsElRef {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#lampSelectionElRef {
+    border-right: 2px solid #8395a7;
+    display: flex;
+    flex-direction: column;
+    padding: 1.6rem;
+}
+
+#areasElRef > * + *,
+#container > * + *,
+#lampSelectionElRef > * + *,
+body > * + * {
+    margin-top: 3.2rem;
+}
+
+#nextPaymentElRef,
+.menu {
+    text-align: center;
+}

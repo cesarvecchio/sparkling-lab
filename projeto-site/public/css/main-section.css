@@ -1,0 +1,30 @@
+.main-section {
+  align-items: center;
+  display: flex;
+  height: calc(100vh - 84px);
+  justify-content: space-between;
+}
+
+/* Aplicar em todos os filhos... */
+.main-section > * {
+  width: 45%;
+}
+
+/* Aplicar em todos os filhos, exceto o último... */
+.main-section_content > *:not(:last-child) {
+  margin-bottom: 3.2rem;
+}
+
+.main-section_description {
+  color: #8395a7;
+}
+
+.main-section_form {
+  align-items: center;
+  display: flex;
+}
+
+/* Aplicar apenas para o primeiro filho de .main-section_form... */
+.main-section_form > *:first-child {
+  margin-right: 1.6rem;
+}
