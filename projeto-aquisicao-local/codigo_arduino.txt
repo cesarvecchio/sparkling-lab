@@ -1,0 +1,26 @@
+const int sensor = A2;
+const int dimmer = A0;
+float volts = 0;
+int sensorValue = 0;
+
+
+void setup()
+{
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  sensorValue = analogRead(dimmer);
+  volts = analogRead(sensor) * 0.0048875; //converte o valor obtido pelo LDR para Volts.
+  
+
+  Serial.print("dimmer: ");
+  Serial.print(sensorValue);
+  Serial.print("\t voltagem: ");
+  Serial.print(volts);
+  Serial.println (":");
+
+  
+  delay(1);
+}
