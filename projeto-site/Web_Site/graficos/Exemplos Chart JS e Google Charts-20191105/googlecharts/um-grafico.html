@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Único gráfico com Google Charts</title>
+        <script type="text/javascript" src="loader.js"></script>
+        <script type="text/javascript">
+            google.charts.load("current", { packages: ["corechart"] });
+            google.charts.setOnLoadCallback(drawChart);
+
+            function drawChart() {
+                var dados = google.visualization.arrayToDataTable([
+                    ["Year", "Smile"],
+                    ["2004", 9000],
+                    ["2005", 7000],
+                    ["2006", 1000],
+                    ["2008", 5000],
+                    ["2009", 6000],
+                    ["2010", 7000],
+                    ["2011", 8000],
+                    ["2012", 9000]
+                ]);
+
+                var opcoes = {
+                    title: "Teste",
+                    curveType: "function",
+                    legend: { position: "bottom" },
+                    colors: ["pink", "orange"]
+                };
+
+                var chart = new google.visualization.LineChart(document.getElementById("div_grafico"));
+
+                chart.draw(dados, opcoes);
+            }
+        </script>
+    </head>
+    <body>
+        <h2>Único gráfico com Google Charts</h2>
+
+        <div id="div_grafico" style=" width: 900px; height: 500px"></div>
+    </body>
+</html>

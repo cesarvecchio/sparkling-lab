@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet" />
+
+        <link href="css/default.css" rel="stylesheet" />
+        <link href="css/header.css" rel="stylesheet" />
+        <link href="css/main-section.css" rel="stylesheet" />
+        <link href="css/product.css" rel="stylesheet" />
+        <link href="css/about-us.css" rel="stylesheet" />
+
+        <meta charset="UTF-8" />
+        <meta content="initial-scale=1.0, width=device-width" name="viewport" />
+        <meta content="ie=edge" http-equiv="X-UA-Compatible" />
+
+        <title>Sparkling Lab</title>
+    </head>
+
+    <body>
+        <header class="header">
+            <nav class="container header_nav">
+                <a class="logo" href="#">Sparkling Lab</a>
+
+                <div>
+                    <a class="header_link" href="#contact">Contato</a>
+                    <!-- TODO: Simulador. -->
+                    <a class="header_link" href="#">Simulador</a>
+                    <a class="header_link" href="dashboard.html">Gráficos</a>
+                    <a class="header_link" href="https://sparklinglab.freshdesk.com/support/home">Suporte</a>
+                </div>
+
+                <!-- TIP: Será estilizado como um botão, embora seja um link para outra página. -->
+                <a class="button" href="sign-in.html">Entrar</a>
+            </nav>
+        </header>
+
+        <main>
+            <!-- Seção principal -->
+            <section class="container main-section">
+                <div class="main-section_content">
+                    <h1>
+                        Quer ter iluminação de qualidade e sem complicações?
+                    </h1>
+
+                    <h3 class="main-section_description">
+                        Nesse caso você precisa inserir o seu email e fazer o cadastro. A partir daí você terá livre
+                        acesso à nossa plataforma.
+                    </h3>
+
+                    <div class="main-section_form">
+                        <input placeholder="maria@exemplo.com.br" type="email" />
+                        <a href="sign-up.html">
+                            <button class="btn">
+                                Cadastrar
+                            </button>
+                        </a>
+                    </div>
+                </div>
+
+                <img
+                    alt="Ilustração de uma mulher com uma lâmpada acesa de fundo."
+                    class="main-section_img"
+                    src="img/main-section/professor.svg"
+                />
+            </section>
+
+            <!-- Produto -->
+            <section class="product-section" id="product">
+                <div class="container">
+                    <h2 class="product-section_heading">Nosso Produto</h2>
+
+                    <h3 class="product-section_description">
+                        Aqui mostraremos um pouco mais sobre como tudo isso funciona
+                    </h3>
+
+                    <div class="product-section_benefit-organizer">
+                        <div class="product-section_benefit">
+                            <img alt="" src="img/product/QA.svg" />
+                            <h5>Consumidor</h5>
+                            <h6>
+                                Você pode abrir um chamado, que será analisado rápidamente.
+                            </h6>
+                        </div>
+
+                        <div class="product-section_benefit">
+                            <img alt="" src="img/product/cheap.svg" />
+                            <h5>Preço</h5>
+                            <h6>
+                                Nosso produto é muito barato, pois o foco principal é economia para quem quer utilizar.
+                            </h6>
+                        </div>
+
+                        <div class="product-section_benefit">
+                            <img alt="" src="img/product/board.svg" />
+                            <a href="pagina-usuario.html">
+                                <h5 class>Dashboard</h5>
+                            </a>
+                            <h6>
+                                Aqui temos atualizações em tempo real.
+                            </h6>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sobre Nós -->
+            <section class="about-section container" id="aboutUs">
+                <h2 class="about-section_heading">Sobre Nós</h2>
+
+                <h3 class="about-section_description">
+                    Agora vou mostrar um pouco mais da equipe que fez tudo isso acontecer✨
+                </h3>
+
+                <div class="about-section_member-organizer">
+                    <div class="about-section_member">
+                        <img alt="" src="https://robohash.org/Bruna" />
+                        <h5>Bruna Oliveira</h5>
+                        <h6>Tech lead</h6>
+                    </div>
+
+                    <div class="about-section_member">
+                        <img alt="" src="https://robohash.org/Gabriel" />
+                        <h5>Gabriel Selotto</h5>
+                        <h6>
+                            Front-end
+                        </h6>
+                    </div>
+
+                    <div class="about-section_member">
+                        <img alt="" src="https://robohash.org/Jairo" />
+                        <h5>Dashboard</h5>
+                        <h6>IOT</h6>
+                    </div>
+
+                    <div class="about-section_member">
+                        <img alt="" src="https://robohash.org/Victória" />
+                        <h5>Dashboard</h5>
+                        <h6>DBA</h6>
+                    </div>
+
+                    <div class="about-section_member">
+                        <img alt="" src="https://robohash.org/César" />
+                        <h5>Dashboard</h5>
+                        <h6>DBA</h6>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="container">
+            <a class="logo" href="#">Sparkling Lab</a>
+            Todos os direitos reservados &copy; 2019
+        </footer>
+    </body>
+</html>

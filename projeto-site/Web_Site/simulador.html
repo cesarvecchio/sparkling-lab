@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Simulador</title>
+    <link rel="stylesheet" href="css/simulador.css" />
+  </head>
+  <body>
+    Quantidade de lâmpadas: <input id="qtdLampadas" /> <br />
+
+    <button onclick="calcularLampadas()">+</button>
+    <button onclick="calcularLampadas()">-</button>
+    <div id="mostrarTotal"></div>
+  </body>
+</html>
+<script>
+  function calcularLampadas() {
+    var totalLampadas = Number(qtdLampadas.value);
+    var precoTotalLampada = totalLampadas * 60;
+    var desconto100 = 0.03;
+    var desconto200 = 0.05;
+    var descontoAcima = 0.07;
+    var instalacao = totalLampadas * 0.3;
+
+    if (totalLampadas >= 100) {
+      mostrarTotal.innerHTML = `${precoTotalLampada -
+        precoTotalLampada * desconto100 +
+        instalacao}`;
+    } else if (totalLampadas >= 200) {
+      mostrarTotal.innerHTML = `${precoTotalLampada -
+        precoTotalLampada * desconto200 +
+        instalacao}`;
+    } else if (totalLampadas > 300) {
+      mostrarTotal.innerHTML = `${precoTotalLampada -
+        precoTotalLampada * descontoAcima +
+        instalacao}`;
+    } else {
+      mostrarTotal.innerHTML = `${precoTotalLampada + instalacao}`;
+    }
+  }
+</script>

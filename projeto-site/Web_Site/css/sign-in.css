@@ -1,0 +1,10 @@
+.center {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.center > *:not(:last-child) {
+    margin-bottom: 3.2rem;
+}

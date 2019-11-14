@@ -1,0 +1,11 @@
+.center {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 32px;
+}
+
+.center > * {
+    margin-bottom: 3.2rem;
+}
