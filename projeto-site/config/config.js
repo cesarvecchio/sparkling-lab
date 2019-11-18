@@ -8,11 +8,16 @@ module.exports = {
     storage: ":memory:"
   },
   production: {
-    username: 'usersparklinglab',
-    password: '#Gfgrupo6',
-    database: 'bdsparklinglab',
-    host: 'srvsparklinglab.database.windows.net',
-    dialect: 'mssql',
+    // username: 'usersparklinglab',
+    // password: '#Gfgrupo6',
+    // database: 'bdsparklinglab',
+    // host: 'srvsparklinglab.database.windows.net',
+    // dialect: 'mssql',
+    username: 'root',
+    password: '',
+    database: 'condominio',
+    host: 'localhost',
+    dialect: 'mysql',
     xuse_env_variable: 'DATABASE_URL',
     dialectOptions: {
       options: {
