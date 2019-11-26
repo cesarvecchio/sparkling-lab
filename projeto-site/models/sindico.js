@@ -6,7 +6,7 @@ https://codewithhugo.com/sequelize-data-types-a-practical-guide/
 */
 
 module.exports = (sequelize, DataTypes) => {
-    let Usuario = sequelize.define('Usuario',{
+    let Sindico = sequelize.define('Sindico',{
 		id_sindico: {
 			type: DataTypes.INTEGER,
 			primaryKey: true,
@@ -36,5 +36,5 @@ module.exports = (sequelize, DataTypes) => {
 		timestamps: false,
 	});
 
-    return Usuario;
+    return Sindico;
 };

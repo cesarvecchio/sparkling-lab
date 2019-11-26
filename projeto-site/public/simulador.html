@@ -1,41 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Simulador</title>
-    <link rel="stylesheet" href="css/simulador.css" />
-  </head>
-  <body>
-    Quantidade de lâmpadas: <input id="qtdLampadas" /> <br />
+    <head>
+        <meta charset="UTF-8" />
+        <title>Simulador</title>
+        <link rel="stylesheet" href="css/simulador.css" />
+        <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet" />
 
-    <button onclick="calcularLampadas()">+</button>
-    <button onclick="calcularLampadas()">-</button>
-    <div id="mostrarTotal"></div>
-  </body>
+        <link href="css/default.css" rel="stylesheet" />
+        <link href="css/header.css" rel="stylesheet" />
+        <link href="css/main-section.css" rel="stylesheet" />
+        <link href="css/product.css" rel="stylesheet" />
+        <link href="css/about-us.css" rel="stylesheet" />
+    </head>
+
+    <body>
+        <header class="header">
+            <nav class="container header_nav">
+                <a class="logo" href="#">Sparkling Lab</a>
+
+                <div>
+                    <a class="header_link" href="#product">Produto</a>
+                    <!-- TODO: Simulador. -->
+                    <a class="header_link" href="index.html">Voltar</a>
+                    <a class="header_link" href="charts.html">Gráficos</a>
+                    <a class="header_link" href="https://sparklinglab.freshdesk.com/support/home">Suporte</a>
+                </div>
+
+                <!-- TIP: Será estilizado como um botão, embora seja um link para outra página. -->
+                <a class="button" href="sign-in.html">Entrar</a>
+            </nav>
+        </header>
+        <h1>Quantidade Lâmpadas</h1>
+        <input
+            type="range"
+            min="1"
+            max="500"
+            value="15"
+            class="slider"
+            id="qtdLampadas"
+            oninput="calcularLampadas
+        ()"
+        />
+        <div class="align-items" id="mostrarLampadas"></div>
+        <div class="align-items" id="mostrarTotal"></div>
+        <div class="align-items" id="desconto"></div>
+        <div class="align-items" id="gasto"></div>
+    </body>
 </html>
-<script>
-  function calcularLampadas() {
-    var totalLampadas = Number(qtdLampadas.value);
-    var precoTotalLampada = totalLampadas * 60;
-    var desconto100 = 0.03;
-    var desconto200 = 0.05;
-    var descontoAcima = 0.07;
-    var instalacao = totalLampadas * 0.3;
+<script src="js/simulador.js">
+    // function calcularLampadas() {
+    //     var totalLampadas = Number(qtdLampadas.value);
+    //     var precoTotalLampada = totalLampadas * 60;
+    //     var desconto100 = 0.03;
+    //     var desconto200 = 0.05;
+    //     var descontoAcima = 0.07;
+    //     var instalacao = totalLampadas * 0.3;
 
-    if (totalLampadas >= 100) {
-      mostrarTotal.innerHTML = `${precoTotalLampada -
-        precoTotalLampada * desconto100 +
-        instalacao}`;
-    } else if (totalLampadas >= 200) {
-      mostrarTotal.innerHTML = `${precoTotalLampada -
-        precoTotalLampada * desconto200 +
-        instalacao}`;
-    } else if (totalLampadas > 300) {
-      mostrarTotal.innerHTML = `${precoTotalLampada -
-        precoTotalLampada * descontoAcima +
-        instalacao}`;
-    } else {
-      mostrarTotal.innerHTML = `${precoTotalLampada + instalacao}`;
-    }
-  }
+    //     if (totalLampadas >= 100) {
+    //         mostrarTotal.innerHTML = `${precoTotalLampada - precoTotalLampada * desconto100 + instalacao}`;
+    //     } else if (totalLampadas >= 200) {
+    //         mostrarTotal.innerHTML = `${precoTotalLampada - precoTotalLampada * desconto200 + instalacao}`;
+    //     } else if (totalLampadas > 300) {
+    //         mostrarTotal.innerHTML = `${precoTotalLampada - precoTotalLampada * descontoAcima + instalacao}`;
+    //     } else {
+    //         mostrarTotal.innerHTML = `${precoTotalLampada + instalacao}`;
+    //     }
+    // }
 </script>

@@ -6,19 +6,19 @@ https://codewithhugo.com/sequelize-data-types-a-practical-guide/
 */
 
 module.exports = (sequelize, DataTypes) => {
-    let Leitura = sequelize.define('Leitura',{	
+    let Grafico_Lampada = sequelize.define('Grafico_Lampada',{	
 		id_grafico_lampada: {
 			type: DataTypes.INTEGER,
 			primaryKey: true,
 			autoIncrement: true
-		},	
+		},
 		data: {
 			type: DataTypes.DATE,
 			allowNull: false
 		},
 		volts: {
-			type: DataTypes.DOUBLE,
-			allowNull: false
+			type: DataTypes.DOUBLE, // campo 'falso' (não existe na tabela). Deverá ser preenchido 'manualmente' no select
+			allowNull: true
 		},
 		momento_grafico: {
 			type: DataTypes.VIRTUAL, // campo 'falso' (não existe na tabela). Deverá ser preenchido 'manualmente' no select
@@ -36,5 +36,5 @@ module.exports = (sequelize, DataTypes) => {
 		timestamps: false,
 	});
 
-    return Leitura;
+    return Grafico_Lampada;
 };

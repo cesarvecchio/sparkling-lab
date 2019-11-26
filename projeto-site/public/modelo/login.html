@@ -52,6 +52,9 @@
 
                 console.log('Erro de login!');
 
+                div_erro.style.display = 'block';
+                div_erro.innerHTML = resposta;
+
                 response.text().then(texto => {
                     console.error(texto);
                     finalizar_aguardar(texto);

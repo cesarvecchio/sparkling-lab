@@ -93,8 +93,7 @@
     function obterDadosGrafico() {
         var dados = new google.visualization.DataTable();
         dados.addColumn('string', 'Momento');
-        dados.addColumn('number', 'Temperatura');
-        dados.addColumn('number', 'Umidade');
+        dados.addColumn('number', 'Volts');
 
         fetch('/leituras/ultimas', {cache:'no-store'}).then(function (response) {
             if (response.ok) {
@@ -111,8 +110,7 @@
                         // que gerou na consulta ao banco de dados
                         dados.addRow([
                             registro.momento, 
-                            registro.temperatura, 
-                            registro.umidade
+                            registro.volts
                         ]);
                     }
 

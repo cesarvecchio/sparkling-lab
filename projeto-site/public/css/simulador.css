@@ -1,5 +1,44 @@
-button {
-  align-items: center;
-  border-radius: 100px;
-  padding: 0.5em;
+* {
+    text-align: center;
+    margin-top: 3.2rem;
+}
+
+.align-items {
+    text-align: center;
+    margin-top: 3.2rem;
+}
+h1 {
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: 60px;
+}
+
+.slider {
+    -webkit-appearance: none;
+    width: 50%;
+    height: 15px;
+    border-radius: 5px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: 0.2s;
+    transition: opacity 0.2s;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #3498db;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #8395a7;
+    cursor: pointer;
 }

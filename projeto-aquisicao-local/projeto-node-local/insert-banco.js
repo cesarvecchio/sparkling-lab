@@ -93,7 +93,7 @@ function registrar_leitura(luminosidade, presenca) {
 
     banco.conectar().then(() => {
 
-        return banco.sql.query(`INSERT into grafico_lampada (lumens, data)
+        return banco.sql.query(`INSERT into grafico_lampada (volts, data)
                                 values (${luminosidade}, CONVERT(Datetime, '${agora()}', 120));`);
 
     }).catch(erro => {
@@ -123,8 +123,8 @@ if (gerar_dados_aleatorios) {
 	// dados aleatórios
 	setInterval(function() {
 		console.log('Gerando valores aleatórios!');
-		registrar_leitura(Math.min(Math.random()*100, 60), Math.min(Math.random()*200, 100))
-	}, 5000);
+		registrar_leitura(Math.min(Math.random()*60, 30), Math.min(Math.random()*1, 0))
+	}, 2500);
 } else {
 	// iniciando a "escuta" de dispositivos Arduino.
 	console.log('Iniciando obtenção de valores do Arduino!');

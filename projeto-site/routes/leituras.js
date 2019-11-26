@@ -12,7 +12,7 @@ router.get('/ultimas', function(req, res, next) {
 	console.log(`Recuperando as últimas ${limite_linhas} leituras`);
 	
 	const instrucaoSql = `select top ${limite_linhas} 
-						lumens,
+						volts,
 						FORMAT(data,'HH:mm:ss') as momento_grafico 
 						from grafico_lampada order by id_grafico_lampada desc`;
 
@@ -35,7 +35,7 @@ router.get('/tempo-real', function (req, res, next) {
 	
 	console.log(`Recuperando as últimas leituras`);
 
-	const instrucaoSql = `select top 1 lumens from grafico_lampada order by id_grafico_lampada desc`;
+	const instrucaoSql = `select volts from grafico_lampada order by id_grafico_lampada desc limit 1`;
 
 	sequelize.query(instrucaoSql, { type: sequelize.QueryTypes.SELECT })
 		.then(resultado => {
@@ -54,9 +54,9 @@ router.get('/estatisticas', function (req, res, next) {
 	console.log(`Recuperando as estatísticas atuais`);
 
 	const instrucaoSql = `select 
-							max(lumens) as lumens_maxima, 
-							min(lumens) as lumens_minima, 
-							avg(lumens) as lumens_media
+							max(volts) as volts_maxima, 
+							min(volts) as volts_minima, 
+							avg(volts) as volts_media
 						from grafico_lampada`;
 
 	sequelize.query(instrucaoSql, { type: sequelize.QueryTypes.SELECT })

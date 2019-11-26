@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<!-- saved from url=(0061)https://www.chartjs.org/samples/latest/charts/line/basic.html -->
+<html>
+    <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet" />
+    <link href="css/dashboard.css" rel="stylesheet" />
+    <link href="css/default.css" rel="stylesheet" />
+    <link href="css/header.css" rel="stylesheet" />
+	<title>Garagem - Tempo Real</title>
+
+	<script src="./js/chartjs.min.js"></script>
+	<script src="./js/utils.js"></script>
+	<script src="./js/funcoes.js"></script>
+
+
+
+<body onload="atualizarGrafico();">
+	<header class="header">
+		<nav class="container header_nav">
+			<a class="logo" href="#"><img style="height: 75px;" src="./img/logo_finalizada.png" alt=""></a>
+
+			<!-- TIP: Será estilizado como um botão, embora seja um link para outra página. -->
+			<a href="lamp.html" class="button">Lampadas</a>
+			<a href="" class="button">Sair</a>
+		</nav>
+	</header>
+    
+	<div style="width:75%;">
+        <div id="div_aguarde">Selecione uma das opções abaixo</div>
+        <canvas id="canvas_grafico"></canvas>
+    </div>
+
+
+	<button onclick="func_tempo_real()" id="tempo_real">Tempo real</button>
+	<button onclick="func_semana()" id="semana">Semana</button>
+	<button onclick="func_mes()" id="mes">Mês</button>
+	<button onclick="func_ano()" id="ano">Ano</button>
+
+
+
+
+
+</body>
+</html>
+
+<script>
+	var tempo = 'nenhum';
+
+	function func_tempo_real(){
+		tempo = 'tempo real';
+	}
+
+	function func_semana(){
+		tempo = 'semana';
+	}
+
+	function func_mes(){
+		tempo = 'mes';
+	}
+
+	function func_ano(){
+		tempo = 'ano';
+	}
+
+	
+	var exibiu_grafico = false;
+
+	// verificar_autenticacao(); 
+
+	
+	function atualizarGrafico(){
+		obterDadosGrafico();
+		setTimeout(atualizarGrafico, 1000);
+	}
+
+	function configurarGrafico(){
+		var configuracoes = {
+			responsive: true,
+			animation: exibiu_grafico ? false : {duration: 1500},
+			hoverMode:'index',
+			stacked: false,
+			title: {
+				display: true,
+				text: 'Histórico'
+			},
+			scales: {
+				yAxes: [{
+					type: 'linear',
+					display: true,
+					position: 'left',
+					id: 'y-volts',
+
+					gridLines: {
+						drawOnChartArea: false,
+					},
+				}],
+			}
+		};
+
+		exibiu_grafico = true;
+
+		return configuracoes;
+	}
+	
+
+	function obterDadosGrafico(){
+
+		var dados = {
+			labels: [],
+			datasets: [
+				{
+					yAxisID: 'y-volts',
+					label: 'volts',
+					borderColor: window.chartColors.red,
+					backgroundColor: window.chartColors.red,
+					fill: false,
+					data: []
+				}
+			]
+		};
+		
+		
+		if(tempo == 'nenhum' ){
+			
+		}
+		
+		if(tempo == 'tempo real' ){
+
+			fetch('/grafico_lampada/grafico_atual', { cache: 'no-store' }).then( function (response){
+				if(response.ok){
+					response.json().then(function(resposta){
+						
+						console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+		
+						resposta.reverse();
+		
+						for(i = 0; i < resposta.length; i++){
+							var registro = resposta[i];
+		
+							dados.labels.push(registro.momento_grafico);
+		
+							dados.datasets[0].data.push(registro.volts);
+						}
+						console.log(JSON.stringify(dados));
+		
+						div_aguarde.style.display = 'none';
+		
+						plotarGrafico(dados)
+					
+					});
+				} else {
+					console.error('Nenhum dado encontrado ou erro na API');
+				}
+			}).catch(function (error){
+				console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`)
+			});
+		}
+
+		if(tempo == 'semana' ){
+			fetch('/grafico_lampada/grafico_semana', { cache: 'no-store' }).then( function (response){
+				if(response.ok){
+					response.json().then(function(resposta){
+						
+						console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+		
+						resposta.reverse();
+		
+						for(i = 0; i < resposta.length; i++){
+							var registro = resposta[i];
+		
+							dados.labels.push(registro.momento_grafico);
+		
+							dados.datasets[0].data.push(registro.volts);
+						}
+						console.log(JSON.stringify(dados));
+		
+						div_aguarde.style.display = 'none';
+		
+						plotarGrafico(dados)
+					
+					});
+				} else {
+					console.error('Nenhum dado encontrado ou erro na API');
+				}
+			}).catch(function (error){
+				console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`)
+			});
+		}
+
+		if(tempo == 'mes' ){
+			fetch('/grafico_lampada/grafico_mes', { cache: 'no-store' }).then( function (response){
+				if(response.ok){
+					response.json().then(function(resposta){
+						
+						console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+		
+						resposta.reverse();
+		
+						for(i = 0; i < resposta.length; i++){
+							var registro = resposta[i];
+		
+							dados.labels.push(registro.momento_grafico);
+		
+							dados.datasets[0].data.push(registro.volts);
+						}
+						console.log(JSON.stringify(dados));
+		
+						div_aguarde.style.display = 'none';
+		
+						plotarGrafico(dados)
+					
+					});
+				} else {
+					console.error('Nenhum dado encontrado ou erro na API');
+				}
+			}).catch(function (error){
+				console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`)
+			});
+		}
+
+		if(tempo == 'ano' ){
+
+			fetch('/grafico_lampada/grafico_ano', { cache: 'no-store' }).then( function (response){
+				if(response.ok){
+					response.json().then(function(resposta){
+						
+						console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+		
+						resposta.reverse();
+		
+						for(i = 0; i < resposta.length; i++){
+							var registro = resposta[i];
+		
+							dados.labels.push(registro.momento_grafico);
+		
+							dados.datasets[0].data.push(registro.volts);
+						}
+						console.log(JSON.stringify(dados));
+		
+						div_aguarde.style.display = 'none';
+		
+						plotarGrafico(dados)
+					
+					});
+				} else {
+					console.error('Nenhum dado encontrado ou erro na API');
+				}
+			}).catch(function (error){
+				console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`)
+			});
+		}
+
+	}
+
+	function plotarGrafico(dados){
+		console.log('Iniciandp plotagem do gráfico...');
+
+		var ctx = canvas_grafico.getContext('2d');
+		window.grafico_linha = Chart.Line(ctx, {
+			data: dados,
+			options: configurarGrafico()
+		});
+	}
+
+
+
+</script>

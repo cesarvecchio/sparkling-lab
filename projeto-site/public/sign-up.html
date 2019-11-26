@@ -15,33 +15,40 @@
 
     <body>
         <main class="center container">
-            <h1>Registro</h1>
+            <form class="center container" id="form_cadastro" method="post" onsubmit="return cadastrar()">
+                <h1>Registro</h1>
+    
+                <label>
+                    <div>Nome</div>
+                    <input name="nome" type="text" />
+                </label>
+    
+                <label>
+                    <div>Sobrenome</div>
+                    <input name="sobrenome" type="text" />
+                </label>
+    
+                <label>
+                    <div>Email</div>
+                    <input name="email" type="email" placeholder="maria@exemplo.com.br" />
+                </label>
+    
+                <label>
+                    <div>Senha</div>
+                    <input name="senha" type="password" />
+                </label>
+    
+                <button class="button" id="btn_cadastrar">Cadastrar</button>
 
-            <label>
-                <div>Nome completo</div>
-                <input type="text" />
-            </label>
+                <a class="link" href="sign-in.html">
+                    Entrar
+                </a>
+    
+                <div id="div_erro" style="background-color: sandybrown; color: maroon; display: none;">
+                    Erro no cadastro
+                </div>
+            </form>
 
-            <label>
-                <div>CPF/CNPJ</div>
-                <input type="text" />
-            </label>
-
-            <label>
-                <div>Email</div>
-                <input type="email" placeholder="maria@exemplo.com.br" />
-            </label>
-
-            <label>
-                <div>Senha</div>
-                <input type="password" />
-            </label>
-
-            <a class="button" href="index.html">Cadastrar</a>
-
-            <a class="link" href="sign-in.html">
-                Entrar
-            </a>
         </main>
 
         <footer class="container">
@@ -50,3 +57,26 @@
         </footer>
     </body>
 </html>
+
+<script>
+
+    function cadastrar(){
+        var formulario = new URLSearchParams(new FormData(form_cadastro));
+        fetch("/sindico/cadastrar", {
+            method: "POST",
+            body: formulario
+        }).then(function (response){
+            if(response.ok){
+                console.log("cadastrou");
+                window.location.href='sign-in.html';
+            }else{
+                console.log('Erro ao cadastrar!');
+                response.text().then(function(resposta){
+                    div_erro.innerHTML = resposta;
+                })
+            }
+        });
+        return false;
+    }
+
+</script>
